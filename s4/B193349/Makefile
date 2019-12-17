@@ -3,8 +3,11 @@ all:
 	javac Frequencer.java -classpath "../.."
 	javac InformationEstimator.java -classpath "../.."
 	javac TestCase.java -classpath "../.."
-run:
-#	java -classpath "../.." s4.B193349/Hello
-#	java -classpath "../.." s4.B193349/Frequencer
-#	java -classpath "../.." s4.B193349/InformationEstimator
+hello:
+	java -classpath "../.." s4.B193349/Hello
+Frequencer:
+	java -classpath "../.." s4.B193349/Frequencer
+InformationEstimator:
+	java -classpath "../.." s4.B193349/InformationEstimator
+TestCase:
 	java -classpath "../.." s4.B193349/TestCase
