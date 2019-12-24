@@ -1,9 +1,8 @@
 package s4.B193349; // Please modify to s4.Bnnnnnn, where nnnnnn is your student ID. 
 import java.lang.*;
 import s4.specification.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import sun.reflect.generics.reflectiveObjects.*;
 
-import java.lang.javax.transaction.*;
 /*
 interface FrequencerInterface {     // This interface provides the design for frequency counter.
     void setTarget(byte[]  target); // set the data to search.
@@ -39,9 +38,9 @@ public class Frequencer implements FrequencerInterface{
   }
 
   // I know that here is a potential problem in the declaration.
-  public int subByteFrequency(int start, int length) throws NotSupportedException { 
+  public int subByteFrequency(int start, int length){ 
 		// Not yet, but it is not currently used by anyone.
-		throw NotSupportedException;
+		return -1;
   }
 
   public static void main(String[] args) {
@@ -49,7 +48,9 @@ public class Frequencer implements FrequencerInterface{
 		int freq;
 		try {
 			System.out.println("checking my Frequencer");
-	    myObject = new Frequencer("Hi Ho Hi Ho".getBytes(),"H".getBytes());
+	    myObject = new Frequencer();
+			myObject.setSpace("Hi Ho Hi Ho".getBytes());
+			myObject.setTarget("H".getBytes());
 	    freq = myObject.frequency();
 	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
