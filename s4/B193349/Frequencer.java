@@ -27,10 +27,16 @@ public class Frequencer implements FrequencerInterface{
 		int targetLength = myTarget.length;
 		int spaceLength = mySpace.length;
 		int count = 0;
+
 		for(int start = 0; start<spaceLength; start++) { // Is it OK?
 			boolean abort = false;
-			for(int i = 0; start + i <spaceLength && i< targetLength; i++) {
-				if(myTarget[i] != mySpace[start+i]) { abort = true; break; }
+			for(int i = 0; i < targetLength; i++) {
+				try{
+					if(myTarget[i] != mySpace[start+i]) { abort = true; break; }
+				}
+				catch(Exception e){
+					System.out.println("bound!!!!");
+				}
 			}
 			if(abort == false) { count++; }
 		}
@@ -50,9 +56,9 @@ public class Frequencer implements FrequencerInterface{
 			System.out.println("checking my Frequencer");
 	    myObject = new Frequencer();
 			myObject.setSpace("Hi Ho Hi Ho".getBytes());
-			myObject.setTarget("H".getBytes());
+			myObject.setTarget("Hoi".getBytes());
 	    freq = myObject.frequency();
-	    System.out.print("\"H\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
+	    System.out.print("\"Hoi\" in \"Hi Ho Hi Ho\" appears "+freq+" times. ");
 	    if(4 == freq) { System.out.println("OK"); } else {System.out.println("WRONG"); }
 		}
 		catch(Exception e) {
